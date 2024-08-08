@@ -31,12 +31,12 @@ body {
     display: none;
     color: #FFF;
     position: fixed;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
     width: 100%;
-    height: 80%;
+    height: 90%;
     z-index: 10;
     opacity: 0;
 }
@@ -468,6 +468,7 @@ input[type="email"], input[type="text"], input[type="password"], input[type="dat
 }
 .image-another-class{
 	width: 88%;
+    height: 35%;
 	margin-left: 10px;
 }
 .item{
@@ -645,4 +646,16 @@ a {
     text-align: center;
     font-size: 30px;
     color: #FFF;
+}
+.show_news{
+    font-size: 190%;
+    margin-left: 10px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.nav-footer-btn{
+    display: flex;
+}
+#news_icon{
+    font-size: 34px;
 }
