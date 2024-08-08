@@ -21,7 +21,6 @@ function login() {
         const userId = generateUserId(user);
         localStorage.setItem('YopshLoc_UserId', userId);
         localStorage.setItem('YopshLoc_Username', user.username);
-        localStorage.setItem('YopshLoc_LastLogin', Date.now());
         displayUserDetails(user);
         updateLastLogin(user.username);
       } else {
@@ -86,8 +85,6 @@ function displayUserDetails(user) {
   document.getElementById('userAge').innerText = user.age;
   document.getElementById('userMobile').innerText = user.mobile;
   document.getElementById('userGender').innerText = user.gender;
-
-  checkSessionTimeout();
 }
 
 function generateUserId(user) {
@@ -99,19 +96,6 @@ function generateUserId(user) {
     hash = hash & hash;
   }
   return Math.abs(hash).toString().padStart(10, '0');
-}
-
-function checkSessionTimeout() {
-  const lastLogin = parseInt(localStorage.getItem('YopshLoc_LastLogin'));
-  const currentTime = Date.now();
-  const sessionTimeout = 30 * 60 * 1000;
-
-  if (currentTime - lastLogin > sessionTimeout) {
-    logout();
-    showCustomAlert('Session expired. Please login again.');
-  } else {
-    localStorage.setItem('YopshLoc_LastLogin', currentTime);
-  }
 }
 
 function showLoader() {
@@ -136,7 +120,6 @@ function closeCustomAlert() {
 function logout() {
   localStorage.removeItem('YopshLoc_UserId');
   localStorage.removeItem('YopshLoc_Username');
-  localStorage.removeItem('YopshLoc_LastLogin');
   document.getElementById('userDetails').style.display = 'none';
   document.getElementById('loginForm').style.display = 'block';
 }
