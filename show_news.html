@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+</div>
+<hr class="head-hr">
+<div id="data-container">
+    <div class="loading">Loading</div>
+</div>
+<script src="show_news.js"></script>
+<style>
+    #data-container{
+        color: #FFF;
+        margin-left: 10px;
+        margin-top: 1px;
+    }
+    .username-class{
+        margin-top: -20px;
+    }
+    .image-another-class{
+        margin-top: -18px;
+    }
+    .loading {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 80%;
+    }
+    .loading::after {
+      content: ' .';
+      animation: loading 2s infinite;
+    }
+    @keyframes loading {
+      0% {
+        content: ' .';
+      }
+      33% {
+        content: ' ..';
+      }
+      66% {
+        content: ' ...';
+      }
+    }
+</style>
